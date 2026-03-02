@@ -1,0 +1,15 @@
+{
+    "name": "sde-project-root",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "postinstall": "npm.cmd install --prefix backend && npm.cmd install --prefix frontend-sprint1",
+        "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend-sprint1\"",
+        "start": "concurrently \"npm start --prefix backend\" \"npm start --prefix frontend-sprint1\"",
+        "backend": "npm.cmd run dev --prefix backend",
+        "frontend": "npm.cmd run dev --prefix frontend-sprint1"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.1"
+    }
+}
