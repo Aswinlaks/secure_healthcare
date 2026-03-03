@@ -81,6 +81,9 @@ const labRoutes = require("./modules/labs/labs.routes");
 // CDSS routes - lab report parsing and care plan generation
 const cdssRoutes = require("./modules/cdss/cdss.routes");
 
+// OCR routes - prescription image upload, OCR extraction, AI integration
+const ocrRoutes = require("./modules/ocr/ocr.routes");
+
 // Admin user management routes - create, view, delete users
 const adminUsersRoutes = require("./routes/adminUsers.routes");
 
@@ -101,6 +104,7 @@ app.use("/auth", authRoutes);                  // Authentication & authorization
 app.use("/patients", patientRoutes);           // Patient records
 app.use("/appointments", appointmentsRoutes);  // Appointment scheduling
 app.use("/doctors", require("./modules/doctors/doctors.routes")); // Doctor listing
+app.use("/ocr", ocrRoutes);                    // Prescription OCR & AI integration
 
 // =============================================================================
 // UTILITY ROUTES
